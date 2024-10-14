@@ -1,51 +1,30 @@
 import java.util.Scanner;
-
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-     double sum;
-     double num1;
-     double num2;
-     while(true){
-         System.out.print("type exit to exit, or type any other key to continue: ");
-         Scanner input = new Scanner(System.in);
-         if (input.nextLine().equals("exit")){
-             break;
-         }
+        double sum;
+        while (true) {
+            System.out.print("type exit to exit, or type any other key to continue: ");
+            ArrayList<Double> numberList = new ArrayList<Double>();
+            ArrayList<String> operatorList = new ArrayList<String>();
+            Scanner input = new Scanner(System.in);
 
-         else{
-             System.out.print("Enter number 1: ");
-             num1 = input.nextDouble();
-             System.out.print("Enter number 2: ");
-             num2 = input.nextDouble();
+            if (input.nextLine().equals("exit")) {
+                break;
+            } else {
+                while (true) {
+                    System.out.println("insert number.");
+                    numberList.add(input.nextDouble());
 
-             input.nextLine();
+                    System.out.println("insert operator.");
+                    operatorList.add(input.next());
 
-
-             System.out.print("type in the desired operation: ");
-             String operation = input.nextLine();
-             switch (operation){
-                 case "+" : sum = num1 + num2;
-                 System.out.println(sum);
-                 break;
-
-                 case "-" : sum = num1 - num2;
-                 System.out.println(sum);
-                 break;
-
-                 case "*" : sum = num1 * num2;
-                 System.out.println(sum);
-                 break;
-
-                 case "/" : sum = num1 / num2;
-                 System.out.println(sum);
-                 break;
-
-                 default: System.out.println("Invalid operation");
-             }
-         }
-     }
-
-
-           }
+                    if (input.next().equals("=")) {
+                        break;
+                    }
+                }
+            }
+        }
+    }
 }
