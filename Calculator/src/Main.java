@@ -17,7 +17,7 @@ public class Main {
             ArrayList<String> operatorList = new ArrayList<>();
 
             System.out.println("Insert the first number:");
-            numberList.add(input.nextDouble());
+            numberList.add(input.nextDouble()); // Add the first number
 
             while (true) {
                 System.out.println("Insert operator (+, -, *, /) or '=' to calculate:");
